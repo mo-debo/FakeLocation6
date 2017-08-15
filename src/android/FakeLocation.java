@@ -47,7 +47,7 @@ public class FakeLocation extends CordovaPlugin {
             } else {
                 Location location;
                 boolean isMock = false;
-                isMock = location.isFromMockProvider();
+                isMock = Location.isFromMockProvider();
                 if (isMock == false) {
                     callbackContext.success(0);
                 } else {
