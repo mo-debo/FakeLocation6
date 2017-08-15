@@ -22,7 +22,7 @@ public class FakeLocation extends CordovaPlugin {
             } else {
                 
                 boolean isMock = false;
-                f (isMock == false) {
+                if (isMock == false) {
                     callbackContext.success(0);
                 } else {
                     callbackContext.success(1);
