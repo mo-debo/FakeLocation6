@@ -46,7 +46,7 @@ public class FakeLocation extends CordovaPlugin {
                 }
             } else {
                 Location location = null;
-                private static LocationManager _locationManager = null;
+                LocationManager _locationManager = null;
                     try {
                         _locationManager = (LocationManager) _cordova.getActivity().getSystemService(Context.LOCATION_SERVICE);
                         location = _locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
