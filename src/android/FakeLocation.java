@@ -45,7 +45,14 @@ public class FakeLocation extends CordovaPlugin {
                     callbackContext.success(1);
                 }
             } else {
-                Location location;
+                Location location = null;
+
+                    try {
+                        location = _locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                    }
+                    catch(SecurityException exc){
+                        Log.e(TAG, exc.getMessage());
+                    }
                 boolean isMock = false;
                 isMock = Location.isFromMockProvider();
                 if (isMock == false) {
