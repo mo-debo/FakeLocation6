@@ -4,28 +4,27 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
 import org.json.JSONException;
-import android.provider.Settings.Secure;
-import android.location.GpsSatellite;
+
+import android.content.Context;
 import android.location.GpsStatus;
 import android.location.Location;
-import android.os.Build;
-import android.telephony.CellIdentityCdma;
-import android.telephony.CellIdentityGsm;
-import android.telephony.CellIdentityLte;
-import android.telephony.CellIdentityWcdma;
-import android.telephony.CellInfoCdma;
-import android.telephony.CellInfoGsm;
-import android.telephony.CellInfoLte;
-import android.telephony.CellInfoWcdma;
-import android.telephony.CellSignalStrengthCdma;
-import android.telephony.CellSignalStrengthGsm;
-import android.telephony.CellSignalStrengthLte;
-import android.telephony.CellSignalStrengthWcdma;
-import android.telephony.SignalStrength;
-import android.telephony.cdma.CdmaCellLocation;
-import android.telephony.gsm.GsmCellLocation;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.location.LocationProvider;
+import android.os.Bundle;
+import android.os.Looper;
 import android.util.Log;
-import android.util.Settings;
+
+import com.esri.cordova.geolocation.model.Coordinate;
+import com.esri.cordova.geolocation.model.InitStatus;
+import com.esri.cordova.geolocation.model.LocationDataBuffer;
+import com.esri.cordova.geolocation.utils.ErrorMessages;
+import com.esri.cordova.geolocation.utils.JSONHelper;
+
+import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaInterface;
+import org.apache.cordova.PluginResult;
+
 
 import com.esri.cordova.geolocation.model.Error;
 
